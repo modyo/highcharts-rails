@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v2.2.4 (2012-05-31)
+ * @license Highcharts JS v2.3.3 (2012-10-04)
  * Exporting module
  *
  * (c) 2010-2011 Torstein Hønsi
@@ -192,11 +192,7 @@ extend(Chart.prototype, {
 		if (!doc.createElementNS) {
 			/*jslint unparam: true*//* allow unused parameter ns in function below */
 			doc.createElementNS = function (ns, tagName) {
-				var elem = doc.createElement(tagName);
-				elem.getBBox = function () {
-					return HC.Renderer.prototype.Element.prototype.getBBox.apply({ element: elem });
-				};
-				return elem;
+				return doc.createElement(tagName);
 			};
 			/*jslint unparam: false*/
 		}
@@ -609,7 +605,7 @@ extend(Chart.prototype, {
 				btnOptions.symbol,
 				btnOptions.symbolX - (symbolSize / 2),
 				btnOptions.symbolY - (symbolSize / 2),
-				symbolSize,
+				symbolSize,				
 				symbolSize
 			)
 			.align(btnOptions, true)
@@ -662,7 +658,7 @@ function crisp(arr) {
 	var i = arr.length;
 	while (i--) {
 		if (typeof arr[i] === 'number') {
-			arr[i] = Math.round(arr[i]) - 0.5;
+			arr[i] = Math.round(arr[i]) - 0.5;		
 		}
 	}
 	return arr;
