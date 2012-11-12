@@ -5820,7 +5820,7 @@ PlotLineOrBand.prototype = {
 				attribs['stroke-width'] = options.borderWidth;
 			}
 		} else {
-			return;
+			return plotLine;
 		}
 		// zIndex
 		if (defined(zIndex)) {
